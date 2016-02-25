@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+import cssModules from 'react-css-modules';
+import styles from './counter.css';
 
-export default class Counter extends Component {
+class Counter extends Component {
   constructor(props, context) {
     super(props, context);
   }
@@ -15,7 +17,7 @@ export default class Counter extends Component {
 
   render() {
     return (
-      <div className="counter-container">
+      <div styleName="root_test">
         <div className="counter-num-label">{this.props.counter}</div>
         {/* Below, the even or odd statement is simply used to demonstrate how one could
         easily use a ternary operator to conditionally show an 'even' or 'odd' string
@@ -35,3 +37,5 @@ Counter.propTypes = {
   counter: PropTypes.number.isRequired,
   actions: PropTypes.object.isRequired
 };
+
+export default cssModules(Counter, styles);
