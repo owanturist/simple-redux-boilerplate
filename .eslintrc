@@ -22,7 +22,8 @@
         "react/jsx-uses-react": 1,
         "react/jsx-no-bind": 0,
         "react/prop-types": 1,
-        "react/jsx-indent-props": [2, 4]
+        "react/jsx-indent-props": [2, 4],
+        "array-bracket-spacing": 0
     },
     "globals": {
         "__DEVELOPMENT__": true

@@ -22,7 +22,8 @@ class App extends Component {
         increment: PropTypes.func.isRequired,
         decrement: PropTypes.func.isRequired,
         incrementIfOdd: PropTypes.func.isRequired,
-        incrementAsync: PropTypes.func.isRequired
+        incrementAsync: PropTypes.func.isRequired,
+        decrementAsync: PropTypes.func.isRequired
     };
 
     inclrementHandler() {
@@ -30,7 +31,7 @@ class App extends Component {
     }
 
     declrementHandler() {
-        this.props.decrement();
+        this.props.decrementAsync();
     }
 
     render() {
