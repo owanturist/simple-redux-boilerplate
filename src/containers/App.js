@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as CounterActions from '../actions/CounterActions';
-import Counter from '../components/Counter';
-import Footer from '../components/Footer';
+import * as CounterActions from 'actions/CounterActions';
+import Counter from 'components/Counter';
+import Footer from 'components/Footer';
 
 /**
  * It is common practice to have a 'Root' container/component require our main App (this one).

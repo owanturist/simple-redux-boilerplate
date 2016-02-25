@@ -65,6 +65,10 @@ module.exports = {
         autoprefixer({ browsers: ['last 2 versions'] })
     ]),
     resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: ['', '.js', '.jsx'],
+        modulesDirectories: [
+            'src',
+            'node_modules'
+        ],
     }
 };
