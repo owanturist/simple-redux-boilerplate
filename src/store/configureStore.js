@@ -6,10 +6,10 @@
 
 let loadedStore = null;
 
-if (process.env.NODE_ENV === 'production') {
-  loadedStore = require('./configureStore.prod');
+if (__DEVELOPMENT__) {
+    loadedStore = require('./configureStore.dev');
 } else {
-  loadedStore = require('./configureStore.dev');
+    loadedStore = require('./configureStore.prod');
 }
 
 export const configureStore = loadedStore;
