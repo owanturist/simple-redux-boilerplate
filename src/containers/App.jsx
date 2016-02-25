@@ -39,7 +39,7 @@ class App extends Component {
 
         return (
             <div>
-                <h1>Simple Redux Boilerplate</h1>
+                <h1>Simple Redux Boilerplate!!!!</h1>
                 <Counter
                     counter={counter}
                     onIncrement={::this.inclrementHandler}
