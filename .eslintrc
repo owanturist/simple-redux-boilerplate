@@ -21,7 +21,8 @@
         "no-var": 0,
         "react/jsx-uses-react": 1,
         "react/jsx-no-bind": 0,
-        "react/prop-types": 1
+        "react/prop-types": 1,
+        "react/jsx-indent-props": [2, 4]
     },
     "globals": {
         "__DEVELOPMENT__": true

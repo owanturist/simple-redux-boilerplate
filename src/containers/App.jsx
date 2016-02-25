@@ -1,9 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as CounterActions from 'actions/CounterActions';
-import Counter from 'components/Counter';
-import Footer from 'components/Footer';
+import * as counterActions from 'actions/counter';
+import { Counter, Footer } from 'components';
 
 
 function select(state) {
@@ -12,28 +10,40 @@ function select(state) {
     };
 }
 
-function bind(dispatch) {
-    return {
-        actions: bindActionCreators(CounterActions, dispatch)
-    };
-}
-
+const bind = {
+    ...counterActions
+};
 
 @connect(select, bind)
 class App extends Component {
 
     static propTypes = {
         counter: PropTypes.number.isRequired,
-        actions: PropTypes.objectOf(PropTypes.func.isRequired).isRequired
+        increment: PropTypes.func.isRequired,
+        decrement: PropTypes.func.isRequired,
+        incrementIfOdd: PropTypes.func.isRequired,
+        incrementAsync: PropTypes.func.isRequired
     };
 
+    inclrementHandler() {
+        this.props.increment();
+    }
+
+    declrementHandler() {
+        this.props.decrement();
+    }
+
     render() {
-        const { counter, actions } = this.props;
+        const { counter } = this.props;
 
         return (
             <div>
                 <h1>Simple Redux Boilerplate</h1>
-                <Counter counter={counter} actions={actions} />
+                <Counter
+                    counter={counter}
+                    onIncrement={::this.inclrementHandler}
+                    onDecrement={::this.declrementHandler}
+                />
                 <Footer />
             </div>
         );
