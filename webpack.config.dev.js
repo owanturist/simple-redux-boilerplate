@@ -39,6 +39,7 @@ module.exports = {
         * Here, we use it to specify a development build.
         */
         new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('development'),
             __DEVELOPMENT__: true
         }),
     ],

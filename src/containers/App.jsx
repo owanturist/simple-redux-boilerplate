@@ -31,7 +31,7 @@ class App extends Component {
     }
 
     declrementHandler() {
-        this.props.decrementAsync();
+        this.props.decrement();
     }
 
     render() {
