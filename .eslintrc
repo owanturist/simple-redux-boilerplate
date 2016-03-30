@@ -14,7 +14,6 @@
         "import/no-unresolved": 0,
         "block-scoped-var": 0,
         "padded-blocks": 0,
-        "comma-dangle": 0,
         "no-console": 0,
         "no-alert": 0,
         "eqeqeq": 0,
@@ -23,7 +22,8 @@
         "react/jsx-no-bind": 0,
         "react/prop-types": 1,
         "react/jsx-indent-props": [2, 4],
-        "array-bracket-spacing": 0
+        "array-bracket-spacing": 0,
+        "arrow-body-style": 0
     },
     "globals": {
         "__DEVELOPMENT__": true
