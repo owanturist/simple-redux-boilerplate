@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
-import { App, DevTools } from 'containers';
+import { DevTools } from 'containers';
+import Routes from 'routes';
 
-function Root({ store }) {
+function Root(props) {
+    const { store } = props;
+
     return (
         <Provider store={store}>
             {__DEVELOPMENT__ ? (
                 <div>
-                    <App/>
+                    <Routes store={store} />
                     <DevTools />
                 </div>
             ) : (
-                <App />
+                <Routes store={store} />
             )}
         </Provider>
     );
 }
+
+Root.propTypes = {
+    store: PropTypes.object.isRequired
+};
 
 export default Root;

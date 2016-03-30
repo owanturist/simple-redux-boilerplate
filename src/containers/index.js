@@ -1,3 +1,4 @@
-export App from './App';
-export DevTools from './DevTools';
-export Root from './Root';
+export App from './app';
+export DevTools from './dev-tools';
+export ErrorPage from './error-page';
+export Root from './root';

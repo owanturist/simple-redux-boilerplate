@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const nested = require('postcss-nested');
 const assets = require('postcss-assets');
@@ -17,10 +18,16 @@ module.exports = {
     ],
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js',
-        publicPath: '/static/'
+        filename: 'bundle.js'
     },
     plugins: [
+        new HtmlWebpackPlugin(
+            {
+                filename:'index.html',
+                template: 'index.html',
+                src: 'bundle.js'
+            }
+        ),
         /**
         * This plugin assigns the module and chunk ids by occurence count. What this
         * means is that frequently used IDs will get lower/shorter IDs - so they become
@@ -55,6 +62,10 @@ module.exports = {
             }, {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=2!postcss')
+            },
+            {
+                test: /\.(png|svg|gif)$/,
+                loader: "file-loader"
             }
         ]
     },
